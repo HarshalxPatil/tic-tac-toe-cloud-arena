@@ -1,0 +1,232 @@
+
+#root {
+  min-height: 100vh;
+}
+
+.arena {
+  width: min(100% - 32px, 480px);
+  margin: 0 auto;
+  padding: 44px 0 28px;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.eyebrow {
+  color: #a99aff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  margin: 14px 0 8px;
+  font-size: clamp(36px, 8vw, 54px);
+  letter-spacing: -2px;
+}
+
+.subtitle,
+.muted {
+  color: #a0a0b5;
+  font-size: 13px;
+}
+
+.panel {
+  padding: 24px;
+  border: 1px solid #303044;
+  border-radius: 22px;
+  background: #191927;
+  box-shadow: 0 20px 60px #00000030;
+}
+
+.setup h2 {
+  margin: 0 0 6px;
+}
+
+.setup .muted {
+  margin-bottom: 24px;
+}
+
+.setup label {
+  display: block;
+  margin: 18px 0 8px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.setup input {
+  width: 100%;
+  padding: 13px;
+  color: white;
+  background: #10101b;
+  border: 1px solid #38384d;
+  border-radius: 10px;
+  outline: none;
+}
+
+.setup input:focus {
+  border-color: #a99aff;
+}
+
+.primary-button,
+.secondary-button {
+  width: 100%;
+  padding: 14px;
+  border-radius: 11px;
+  font-weight: 700;
+}
+
+.primary-button {
+  margin-top: 22px;
+  border: none;
+  color: #fff;
+  background: linear-gradient(110deg, #8068f7, #a36af5);
+}
+
+.primary-button:hover {
+  filter: brightness(1.12);
+}
+
+.secondary-button {
+  margin-top: 10px;
+  color: #d0caff;
+  background: transparent;
+  border: 1px solid #41405c;
+}
+
+.scoreboard {
+  display: grid;
+  grid-template-columns: 1fr 70px 1fr;
+  align-items: stretch;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.score-card,
+.draw-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 14px 5px;
+  border: 1px solid #303044;
+  border-radius: 16px;
+  background: #191927;
+  min-width: 0;
+}
+
+.score-card.active {
+  border-color: #8f7cff;
+  box-shadow: 0 0 20px #8f7cff1b;
+}
+
+.symbol {
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.x-symbol {
+  color: #aa9aff;
+}
+
+.o-symbol {
+  color: #61e4c4;
+}
+
+.player-name {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.score-card strong,
+.draw-card strong {
+  font-size: 25px;
+}
+
+.score-card small,
+.draw-card span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.game-panel {
+  padding: 22px;
+}
+
+.status {
+  min-height: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 9px;
+}
+
+.cell {
+  aspect-ratio: 1;
+  min-width: 0;
+  border: 1px solid #38384d;
+  border-radius: 13px;
+  background: #232337;
+  color: white;
+  font-size: clamp(34px, 10vw, 48px);
+  font-weight: 800;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.cell:not(:disabled):hover {
+  background: #30304a;
+  transform: translateY(-2px);
+}
+
+.cell:disabled {
+  cursor: default;
+}
+
+.cell-x {
+  color: #aa9aff;
+}
+
+.cell-o {
+  color: #61e4c4;
+}
+
+.round-message {
+  text-align: center;
+  color: #bcb2ff;
+  font-size: 13px;
+}
+
+.arena footer {
+  margin-top: 25px;
+  text-align: center;
+  color: #77778e;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 380px) {
+  .arena {
+    width: min(100% - 20px, 480px);
+  }
+
+  .panel {
+    padding: 16px;
+  }
+
+  .scoreboard {
+    gap: 5px;
+    grid-template-columns: 1fr 55px 1fr;
+  }
+}
